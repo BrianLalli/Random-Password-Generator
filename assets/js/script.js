@@ -12,30 +12,31 @@
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-}
+  }
 
 // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
-  function generatePassword(){}
+  function generatePassword(){
 
 // Adding debugger to test code
   // debugger
 
 
 // Prompt = length
-  let pwdLength = prompt("How many characters do you want in your password? Choose between 8 and 128");
-  console.log(pwdLength)
+  let length = prompt("How many characters do you want in your password? Choose between 8 and 128");
+  console.log(length)
 // Create var to hold answer to prompt
   var potentialChoicesArray = []
 
 // Conditional if else statement to ensure user answer to prompt is within range
-  if (pwdLength >= 8 && pwdLength <= 128) {
+  if (length >= 8 && length <= 128) {
     console.log("Range correct");
   } else {
     window.alert("Not within range. Please choose a number between 8 and 128")
     prompt("Try again");
-    var potentialChoicesArray = []
+    console.log("Not within range");
+    var potentialChoicesArray = [];
   }
 
 // Confirm = lowercase, uppercase, numeric, special characters
@@ -61,37 +62,24 @@
     console.log("Range not correct")
   }
    
-// function to randomly capture a character from the combined array
-  function random_item(potentialChoicesArray)
-  {
-    
-  return potentialChoicesArray[Math.floor(Math.random()* potentialChoicesArray.length)];
-      
-  }
+// function to randomly capture user determined # of characters from the combined array
+// src: https://www.w3resource.com/javascript-exercises/javascript-array-exercise-35.php
+var rando = [];
 
-  // var items = [potentialChoicesArray];
-  console.log(random_item(potentialChoicesArray));
-
-// for loop to run through the array and randomly keep choosing characters
-  for(let i=0; i === length; i++){
-    console.log(potentialChoicesArray);
+function random_item(potentialChoicesArray){
+    // let rando = length
+    for(let i = 0; i < length; i++){
+    rando.push(potentialChoicesArray[Math.floor(Math.random()* potentialChoicesArray.length)]); 
+    }
+    return rando;
   }
 
 
-  // potentialChoicesArray[Math.floor(Math.random() * potentialChoicesArray.length)];
+// Chnage function to a string to generate and return password
+  random_item(potentialChoicesArray);
+  return rando.join("");
+}
 
 
 
-
-
-
-
-
-
-
-  
-// create a string set equal to password var
-// generate random password
-// return password
-
-//   return password;
+// src: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration

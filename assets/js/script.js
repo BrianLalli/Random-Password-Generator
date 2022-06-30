@@ -7,7 +7,7 @@
   var specialCharacters = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '/', ':', ';', "'", '"', '<', '>', ',', '.', '?']
    
 
-// Write password to the #password input
+// Write function for password input
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
@@ -19,13 +19,10 @@
 
   function generatePassword(){
 
-// Adding debugger to test code
-  // debugger
-
-
 // Prompt = length
   let length = prompt("How many characters do you want in your password? Choose between 8 and 128");
   console.log(length)
+
 // Create var to hold answer to prompt
   var potentialChoicesArray = []
 
@@ -62,24 +59,17 @@
     console.log("Range not correct")
   }
    
-// function to randomly capture user determined # of characters from the combined array
-// src: https://www.w3resource.com/javascript-exercises/javascript-array-exercise-35.php
-var rando = [];
+// Function to randomly capture user determined # of characters from the combined array
+  var rando = [];
 
-function random_item(potentialChoicesArray){
-    // let rando = length
-    for(let i = 0; i < length; i++){
-    rando.push(potentialChoicesArray[Math.floor(Math.random()* potentialChoicesArray.length)]); 
-    }
-    return rando;
+  function random_item(potentialChoicesArray){
+      for(let i = 0; i < length; i++){
+      rando.push(potentialChoicesArray[Math.floor(Math.random()* potentialChoicesArray.length)]); 
+      }
+      return rando;
   }
 
-
-// Chnage function to a string to generate and return password
+// Change function to a string to generate and return password
   random_item(potentialChoicesArray);
   return rando.join("");
 }
-
-
-
-// src: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration

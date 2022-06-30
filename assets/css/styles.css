@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1729;
+    background-color: white;
   }
   
   .inputBox {
@@ -55,17 +55,17 @@
     position: relative;
     cursor: pointer;
     color: #fae5df;
-    background-color: #303179;
+    background-color: red;
     font-size: 24px;
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
   }
-  
+
   .inputBox #btn:active {
     background-color: #141850;
     transform: scale(0.98);
-  }
+  } 
   
   
   
